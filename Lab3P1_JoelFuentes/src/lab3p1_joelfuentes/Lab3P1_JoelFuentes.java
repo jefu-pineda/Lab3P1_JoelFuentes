@@ -13,10 +13,10 @@ public class Lab3P1_JoelFuentes {
         Scanner mcok_string = new Scanner(System.in);
         Scanner mcok_numero = new Scanner(System.in);
         Random randint = new Random();
-        System.out.println("Bienvenido a mi laboratorio :)");
 
         while (true)
         {
+            System.out.println("Bienvenido a mi laboratorio :)");
             System.out.println("1) Los 75 juegos del hambre");
             System.out.println("2) Wordle");
             System.out.println("3) Movimiento de pendulo");
@@ -224,88 +224,195 @@ public class Lab3P1_JoelFuentes {
                             String adivina = mcok_string.next();
                             adivina = adivina.toLowerCase();
                             
-                            if (adivina.charAt(0) == palabra.charAt(0))
-                            {
+                            if (adivina.charAt(0) == palabra.charAt(0) && adivina.charAt(1) == palabra.charAt(1) 
+                                    && adivina.charAt(2) == palabra.charAt(2) 
+                                    && adivina.charAt(3) == palabra.charAt(3) 
+                                    && adivina.charAt(4) == palabra.charAt(4) ) {
+                                intentos = 0;
                                 System.out.print("Resultado: ");
                                 palabra = palabra.toUpperCase();
-                                System.out.println(palabra.charAt(0) + "----");
-                            } else if (adivina.charAt(1) == palabra.charAt(1))
+                                System.out.println(palabra);
+                                System.out.println("Has ganado la partida");
+                                System.out.println(" ");
+                                System.out.println("Desea intentar otra vez?");
+                                
+                                System.out.print("1) Si, 2) No: ");
+                                byte continuar = mcok_numero.nextByte();
+                                switch(continuar) {
+                                    case 1: {
+                                        continue;
+                                    }
+                                    case 2: {
+                                        empezar_while = 3;
+                                        break;
+                                    }
+                                    default: {
+                                        System.out.println("Opcion no valida");
+                                        break;
+                                    }
+                                }
+                                    
+                                } else if (adivina.charAt(1) == palabra.charAt(1) 
+                                    && adivina.charAt(2) == palabra.charAt(2) 
+                                    && adivina.charAt(3) == palabra.charAt(3)
+                                    && adivina.charAt(4) == palabra.charAt(4)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println("-" + palabra.substring(1,5) );
+                                
+                                
+                                } else if (adivina.charAt(0) == palabra.charAt(0) 
+                                    && adivina.charAt(2) == palabra.charAt(2) 
+                                    && adivina.charAt(3) == palabra.charAt(3)
+                                    && adivina.charAt(4) == palabra.charAt(4)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println(palabra.charAt(0) + "-" + palabra.substring(2,5) );
+                                
+                                
+                                
+                                } else if (adivina.charAt(0) == palabra.charAt(0) 
+                                    && adivina.charAt(1) == palabra.charAt(1) 
+                                    && adivina.charAt(3) == palabra.charAt(3)
+                                    && adivina.charAt(4) == palabra.charAt(4)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println(palabra.substring(0, 2) + "-" + palabra.substring(3,5) );
+                                
+                                } else if (adivina.charAt(0) == palabra.charAt(0) 
+                                    && adivina.charAt(1) == palabra.charAt(1) 
+                                    && adivina.charAt(2) == palabra.charAt(2)
+                                    && adivina.charAt(4) == palabra.charAt(4)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println(palabra.substring(0, 3) + "-" + palabra.substring(4,5) );
+                                
+                                
+                                
+                                } else if (adivina.charAt(0) == palabra.charAt(0) 
+                                    && adivina.charAt(1) == palabra.charAt(1) 
+                                    && adivina.charAt(2) == palabra.charAt(2)
+                                    && adivina.charAt(3) == palabra.charAt(3)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println(palabra.substring(0, 4) + "-");
+                         
+                                } else if (adivina.charAt(2) == palabra.charAt(2) 
+                                    && adivina.charAt(3) == palabra.charAt(3)
+                                    && adivina.charAt(4) == palabra.charAt(4)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println("--" + palabra.substring(2, 5));
+                                
+                                } else if (adivina.charAt(1) == palabra.charAt(1) 
+                                    && adivina.charAt(3) == palabra.charAt(3)
+                                    && adivina.charAt(4) == palabra.charAt(4)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println("-" + palabra.charAt(1) + "-" + palabra.substring(3,5));
+                                    
+                                } else if (adivina.charAt(1) == palabra.charAt(1) 
+                                    && adivina.charAt(2) == palabra.charAt(2)
+                                    && adivina.charAt(4) == palabra.charAt(4)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println("-" + palabra.substring(1, 3) + "-" + palabra.charAt(4));
+                                    
+                                } else if (adivina.charAt(1) == palabra.charAt(1) 
+                                    && adivina.charAt(2) == palabra.charAt(2)
+                                    && adivina.charAt(3) == palabra.charAt(3)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println("-" + palabra.substring(1, 4) + "-");
+                                    
+                                } else if (adivina.charAt(0) == palabra.charAt(0) 
+                                    && adivina.charAt(3) == palabra.charAt(3)
+                                    && adivina.charAt(4) == palabra.charAt(4)) {
+                                    
+                                    intentos++;
+                                    System.out.print("Resultado: ");
+                                    palabra = palabra.toUpperCase();
+                                    System.out.println(palabra.charAt(0) + "--" + palabra.substring(3,5));
+                                }
+                        }
+                    }
+                    break;
+                }
+                case 3:
+                {
+                    byte empezar_while = 1;
+                    while (empezar_while == 1)
+                    {
+
+                        System.out.println("Bienvenido a movimiento de pendulo");
+                        System.out.print("Ingrese la amplitud del movimiento (en metros): ");
+                        int amp = mcok_numero.nextInt();
+                        System.out.print("Ingrese cuantos segundo se movera el pendulo (en segundos): ");
+                        int seg = mcok_numero.nextInt();
+
+                        int pos_inicial = 0;
+                        int cont_pos_inicial = 0;
+                        int cont_amp = 0;
+                        int cont_seg = 0;
+
+                        if (cont_amp <= amp && cont_amp >= 0)
+                        {
+                            while (cont_amp <= amp && cont_seg < seg)
                             {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println("-" + palabra.charAt(1) + "---");
-                            } else if (adivina.charAt(2) == palabra.charAt(2))
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println("--" + palabra.charAt(2) + "--");
-                            } else if (adivina.charAt(3) == palabra.charAt(3))
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println("---" + palabra.charAt(3) + "-");
-                            } else if (adivina.charAt(4) == palabra.charAt(4))
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println("----" + palabra.charAt(4) + "");
-                            } else if (adivina.charAt(0) == palabra.charAt(0) && adivina.charAt(1) == palabra.charAt(1) )
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println(palabra.charAt(0) + palabra.charAt(1) + "---");
-                            } else if (adivina.charAt(0) == palabra.charAt(0) && adivina.charAt(2) == palabra.charAt(2))
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println(palabra.charAt(0) + "-" + palabra.charAt(2) + "--");
-                            } else if (adivina.charAt(0) == palabra.charAt(0) && adivina.charAt(3) == palabra.charAt(3) )
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println(palabra.charAt(0) + "--" + palabra.charAt(3)+ "-");
-                            } else if (adivina.charAt(0) == palabra.charAt(0) && adivina.charAt(4) == palabra.charAt(4) )
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println(palabra.charAt(0) + "---" + palabra.charAt(4));
-                            } else if (adivina.charAt(4) == palabra.charAt(4))
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println("----" + palabra.charAt(4) + "");
+                                cont_amp++;
+                                cont_seg++;
+                                System.out.println("El pendulo esta a " + cont_amp + " metro/s de la posicion inicial en " + cont_seg + " segundo/s");
+                                if (cont_amp == amp && cont_amp >= 0 && cont_seg < seg)
+                                {
+                                    do
+                                    {
+                                        cont_amp--;
+                                        cont_seg++;
+                                        System.out.println("El pendulo esta a " + cont_amp + " metro/s de la posicion inicial en " + cont_seg + " segundo/s");
+                                    } while (cont_amp < amp && (cont_amp * -1) < amp);
+                                }
                             }
-                             if (adivina.charAt(1) == palabra.charAt(1) && adivina.charAt(1) == palabra.charAt(1) )
+                            System.out.println("");
+                            System.out.println("Desea volver a intentar?");
+                            System.out.println("1) Si, 2) No");
+                            byte continuar = mcok_numero.nextByte();
+                            
+                            if (continuar == 1) {
+                                continue;
+                            } else if (continuar == 2) {
+                               empezar_while = 2;
+                            } else {
+                                System.out.println("Opcion invalida");
+                                continue;
+                            }
+                            if (cont_amp == pos_inicial)
                             {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println(palabra.charAt(0) + palabra.charAt(1) + "---");
-                            } else if (adivina.charAt(0) == palabra.charAt(0) && adivina.charAt(2) == palabra.charAt(2))
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println(palabra.charAt(0) + "-" + palabra.charAt(2) + "--");
-                            } else if (adivina.charAt(0) == palabra.charAt(0) && adivina.charAt(3) == palabra.charAt(3) )
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println(palabra.charAt(0) + "--" + palabra.charAt(3)+ "-");
-                            } else if (adivina.charAt(0) == palabra.charAt(0) && adivina.charAt(4) == palabra.charAt(4) )
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println(palabra.charAt(0) + "---" + palabra.charAt(4));
-                            } else if (adivina.charAt(4) == palabra.charAt(4))
-                            {
-                                System.out.print("Resultado: ");
-                                palabra = palabra.toUpperCase();
-                                System.out.println("----" + palabra.charAt(4) + "");
+                                cont_pos_inicial++;
                             }
                         }
-
                     }
                 }
             }
         }
     }
 }
+
+
